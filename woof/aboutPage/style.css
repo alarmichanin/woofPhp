@@ -1,0 +1,210 @@
+.about {
+  background: linear-gradient(rgba(102, 46, 28, 0.6), rgba(102, 46, 28, 0.6)), url('../assets/backgr.png');
+}
+.about .line {
+  background-color: #662E1C;
+  height: 80px;
+}
+.about .mainContent .dogs {
+  background: url("../assets/dogs.jpeg") no-repeat center;
+  background-size: cover;
+  height: 70vw;
+}
+@media (min-width: 1200px) {
+  .about .mainContent .dogs {
+    height: 50vw;
+  }
+}
+.about .mainContent .whoWeAre {
+  margin-top: -40vw;
+  margin-bottom: 60px;
+  border-radius: 35px;
+  background-color: rgba(220, 202, 160, 0.5);
+  color: #662E1C;
+}
+@media (min-width: 576px) {
+  .about .mainContent .whoWeAre {
+    margin-bottom: 80px;
+  }
+}
+@media (min-width: 768px) {
+  .about .mainContent .whoWeAre {
+    margin-bottom: 120px;
+  }
+}
+@media (min-width: 992px) {
+  .about .mainContent .whoWeAre {
+    margin-bottom: 160px;
+    border-radius: 55px;
+    margin-top: -35vw;
+  }
+}
+.about .mainContent .whoWeAre .header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+  text-align: center;
+  vertical-align: bottom;
+}
+@media (min-width: 576px) {
+  .about .mainContent .whoWeAre .header {
+    margin-top: 100px;
+    font-size: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .about .mainContent .whoWeAre .header {
+    margin-top: 120px;
+    font-size: 64px;
+  }
+}
+@media (min-width: 992px) {
+  .about .mainContent .whoWeAre .header {
+    margin-top: 180px;
+    font-size: 96px;
+  }
+}
+.about .mainContent .whoWeAre .founder {
+  width: 100%;
+  border-radius: 30px;
+  margin-top: 35px;
+}
+@media (min-width: 576px) {
+  .about .mainContent .whoWeAre .founder {
+    border-radius: 50px;
+    margin-top: 65px;
+  }
+}
+@media (min-width: 768px) {
+  .about .mainContent .whoWeAre .founder {
+    border-radius: 90px;
+  }
+}
+.about .mainContent .whoWeAre .photoTitle {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+@media (min-width: 576px) {
+  .about .mainContent .whoWeAre .photoTitle {
+    margin-top: 25px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  .about .mainContent .whoWeAre .photoTitle {
+    font-size: 24px;
+    margin-top: 45px;
+  }
+}
+.about .mainContent .whoWeAre .generalInfo {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 16px;
+  color: #FF922D;
+}
+@media (min-width: 576px) {
+  .about .mainContent .whoWeAre .generalInfo {
+    margin-top: 40px;
+    font-size: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .about .mainContent .whoWeAre .generalInfo {
+    -webkit-text-stroke: 1px #662E1C;
+    font-size: 32px;
+  }
+}
+@media (min-width: 992px) {
+  .about .mainContent .whoWeAre .generalInfo {
+    font-size: 48px;
+  }
+}
+.about .mainContent .whoWeAre .info {
+  margin: 20px 0 60px 0;
+  font-size: 12px;
+}
+@media (min-width: 576px) {
+  .about .mainContent .whoWeAre .info {
+    margin: 40px 0 100px 0;
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .about .mainContent .whoWeAre .info {
+    margin: 60px 0 160px 0;
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) {
+  .about .mainContent .whoWeAre .info {
+    margin: 80px 0 230px 0;
+    font-size: 24px;
+  }
+}
+.about .awards {
+  background-color: #662E1C;
+  border-radius: 40px;
+  margin-bottom: 80px;
+}
+@media (min-width: 576px) {
+  .about .awards {
+    margin-bottom: 120px;
+    border-radius: 50px;
+  }
+}
+@media (min-width: 768px) {
+  .about .awards {
+    margin-bottom: 180px;
+    border-radius: 70px;
+  }
+}
+@media (min-width: 992px) {
+  .about .awards {
+    margin-bottom: 220px;
+  }
+}
+.about .awards .awImg p {
+  font-size: 10px;
+  color: #FF922D;
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media (min-width: 576px) {
+  .about .awards .awImg p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .about .awards .awImg p {
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
+}
+@media (min-width: 992px) {
+  .about .awards .awImg p {
+    font-size: 36px;
+  }
+}
+.about .awards .awImg img {
+  margin: 25px auto 0 auto;
+  display: block;
+  height: 15vw;
+}
+@media (min-width: 576px) {
+  .about .awards .awImg img {
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .about .awards .awImg img {
+    font-size: 24px;
+  }
+}
+@media (min-width: 992px) {
+  .about .awards .awImg img {
+    height: 150px;
+    font-size: 36px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

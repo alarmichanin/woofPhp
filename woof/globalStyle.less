@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+@mainColor: #662E1C;
+@secondColor: #AF4425;
+@thirdColor: #EBDCB2;
+@forthColor: #FF922D;
+
+@xlPawSize: calc(415px + 1vw);
+@lgPawSize: calc(360px + 1vw);
+@mdPawSize: calc(305px + 1vw);
+@smPawSize: calc(250px + 1vw);
+@pawSize: calc(195px + 1vw);
+
+@madeByTop:140px;
+@madeByTopSM:@madeByTop+40px;
+@madeByTopMD:@madeByTopSM+40px;
+@madeByTopLG:@madeByTopMD+40px;
+@madeByTopXL:@madeByTopLG+40px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: @mainColor;
+  opacity: 85%;
+  height: 80px;
+  width: 100%;
+  z-index: 2;
+
+  .nav {
+    height: 80px;
+
+    .logo {
+      width: 90px;
+      margin-top: 10px;
+    }
+
+    .menu {
+      text-align: center;
+      align-items: center;
+      white-space: nowrap;
+
+      .aDiv {
+        height: 30px;
+
+        a {
+          font-size: 11px;
+          color: @thirdColor;
+          text-decoration: none;
+          position: relative;
+          @media (min-width: 992px) {
+            font-size: 11.5px;
+          }
+          @media (min-width: 1200px) {
+            font-size: 14px;
+          }
+        }
+
+        .underline:after {
+          position: absolute;
+          content: "";
+          height: 5px;
+          bottom: -7px;
+          border-radius: 100%;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          width: 5px;
+          background: @forthColor;
+        }
+      }
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+    }
+
+
+    .iconsHeader {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: auto;
+      color: @thirdColor;
+      flex-wrap: nowrap;
+      font-size: 20px;
+      .barI{
+        .hamburger_menu {
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: fixed;
+          visibility: hidden;
+          margin: 0;
+          padding: 50% 0;
+          list-style: none;
+          text-align: center;
+          background-color: @mainColor;
+        }
+        .item {
+          display: block;
+          padding: 12px 24px;
+          color: @thirdColor;
+          font-size: 20px;
+          text-decoration: none;
+        }
+        .item:hover {
+          background-color:@secondColor;
+        }
+      }
+      @media (min-width: 320px) {
+        justify-content: flex-end;
+      }
+      @media (min-width: 576px) {
+        justify-content: flex-start;
+        font-size: 25px;
+      }
+      @media (min-width: 768px) {
+        font-size: 20px;
+        margin-left: -10px;
+        .barI {
+          display: none;
+        }
+      }
+      @media (min-width: 992px) {
+        font-size: 25px;
+        margin-left: -1px;
+      }
+    }
+  }
+}
+
+
+.footer {
+  background: @mainColor;
+  color: @thirdColor;
+  position: relative;
+  height: 400px;
+  @media (min-width: 576px) {
+    height: 550px;
+  }
+  @media (min-width: 992px) {
+    height: 600px;
+  }
+  @media (min-width: 1200px) {
+    height: 700px;
+  }
+
+  .headerOfFooter {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    @media (min-width: 576px) {
+      margin-top: 105px;
+      font-size: 25px;
+    }
+    @media (min-width: 768px) {
+      font-size: 30px;
+    }
+    @media (min-width: 992px) {
+      font-size: 36px;
+    }
+  }
+
+  .schedule {
+    margin-top: 10px;
+    font-size: 16px;
+    @media (min-width: 576px) {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    @media (min-width: 768px) {
+      font-size: 22px;
+    }
+    @media (min-width: 992px) {
+      font-size: 24px;
+    }
+  }
+
+  .detail {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 2;
+    @media (min-width: 576px) {
+      margin-top: 60px;
+      font-size: 20px;
+    }
+    @media (min-width: 768px) {
+      font-size: 22px;
+    }
+    @media (min-width: 992px) {
+      font-size: 24px;
+    }
+  }
+
+  .footerPaw {
+    position: absolute;
+    top: 190px;
+    left: 35vw;
+    @media (min-width: 576px) {
+      top: 165px;
+      left: 55vw;
+    }
+
+
+    .child {
+      position: absolute;
+    }
+
+
+    .paw {
+      font-size: @pawSize;
+      @media (min-width: 576px) {
+        font-size: @smPawSize;
+      }
+      @media (min-width: 768px) {
+        font-size: @mdPawSize;
+      }
+      @media (min-width: 992px) {
+        font-size: @lgPawSize;
+      }
+      @media (min-width: 1200px) {
+        font-size: @xlPawSize;
+      }
+    }
+
+    .socialNet {
+      color: black;
+      font-size: calc(@pawSize / 5.3);
+      @media (min-width: 576px) {
+        font-size: calc(@smPawSize / 5.3);
+      }
+      @media (min-width: 768px) {
+        font-size: calc(@mdPawSize / 5.3);
+      }
+      @media (min-width: 992px) {
+        font-size: calc(@lgPawSize / 5.3);
+      }
+      @media (min-width: 1200px) {
+        font-size: calc(@xlPawSize / 5.3);
+      }
+    }
+
+    .inst {
+      top: 70px;
+      left: calc(@pawSize / 25);
+      @media (min-width: 576px) {
+        top: 90px;
+        left: calc(@smPawSize / 25);
+      }
+      @media (min-width: 768px) {
+        top: 110px;
+        left: calc(@mdPawSize / 25);
+      }
+      @media (min-width: 992px) {
+        top: 130px;
+        left: calc(@lgPawSize / 25);
+      }
+      @media (min-width: 1200px) {
+        top: 150px;
+        left: calc(@xlPawSize / 25);
+      }
+    }
+
+    .tel {
+      top: 30px;
+      left: calc(@pawSize / 1.75);
+      @media (min-width: 576px) {
+        left: calc(@smPawSize / 1.75);
+      }
+      @media (min-width: 768px) {
+        top: 40px;
+        left: calc(@mdPawSize / 1.75);
+      }
+      @media (min-width: 992px) {
+        left: calc(@lgPawSize / 1.75);
+      }
+      @media (min-width: 1200px) {
+        top: 50px;
+        left: calc(@xlPawSize / 1.75);
+      }
+    }
+
+    .face {
+      top: 30px;
+      left: calc(@pawSize / 3.97);
+      @media (min-width: 576px) {
+        left: calc(@smPawSize / 3.97);
+      }
+      @media (min-width: 768px) {
+        top: 40px;
+        left: calc(@mdPawSize / 3.97);
+      }
+      @media (min-width: 992px) {
+        left: calc(@lgPawSize / 3.97);
+      }
+      @media (min-width: 1200px) {
+        top: 50px;
+        left: calc(@xlPawSize / 3.97);
+      }
+    }
+
+    .whats {
+      top: 70px;
+      left: calc(@pawSize / 1.22);
+      @media (min-width: 576px) {
+        top: 90px;
+        left: calc(@smPawSize / 1.22);
+      }
+      @media (min-width: 768px) {
+        top: 110px;
+        left: calc(@mdPawSize / 1.22);
+      }
+      @media (min-width: 992px) {
+        top: 130px;
+        left: calc(@lgPawSize / 1.22);
+      }
+      @media (min-width: 1200px) {
+        top: 150px;
+        left: calc(@xlPawSize / 1.22);
+      }
+    }
+
+    .madeBy {
+      top: @madeByTop;
+      text-align: center;
+      color: black;
+      left: calc(@pawSize / 6.4);
+      @media (min-width: 576px) {
+        top: @madeByTopSM;
+        left: calc(@smPawSize / 4);
+      }
+      @media (min-width: 768px) {
+        top: @madeByTopMD;
+        left: calc(@mdPawSize / 3.5);
+      }
+      @media (min-width: 992px) {
+        top: @madeByTopLG;
+        left: calc(@lgPawSize / 3.5);
+        font-size: 20px;
+      }
+      @media (min-width: 1200px) {
+        top: @madeByTopXL;
+        left: calc(@xlPawSize / 3.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+@mainColor: #662E1C;
+@secondColor: #AF4425;
+@thirdColor: #EBDCB2;
+@forthColor: #FF922D;
+
+body{
+  background-image: linear-gradient(rgba(102, 46, 28, 0.6), rgba(102, 46, 28, 0.6)), url('../assets/backgr.png');
+  background-position: center;
+  background-size: contain;
+}
+.contactUs {
+  margin-top: 80px;
+  position: relative;
+  .paws{
+    display: none;
+    //???
+    @media(min-width: 768px){
+      display: contents;
+    }
+  }
+
+  .child{
+    position: absolute;
+  }
+  .paw{
+    font-size: 90px;
+    top: 65px;
+    color: @thirdColor;
+    @media(min-width: 992px){
+      font-size: 140px;
+    }
+
+  }
+  .left{
+    left: 10vw;
+    transform: rotate(-28deg);
+    @media(min-width: 992px){
+      left: 5vw;
+    }
+  }
+  .right{
+    left: 80vw;
+    transform: rotate(128deg);
+    @media(min-width: 992px){
+      left: 85vw;
+    }
+  }
+  .contact {
+    margin-top: 60px;
+    font-weight: bold;
+    font-size: 26px;
+    color: @forthColor;
+    text-align: center;
+    @media(min-width: 576px){
+      margin-top: 80px;
+      font-size: 32px;
+    }
+    @media(min-width: 768px){
+      margin-top: 100px;
+      font-size: 48px;
+    }
+    @media(min-width: 992px){
+      margin-top: 120px;
+      font-size: 64px;
+    }
+  }
+
+  .mapForm {
+    margin-top: 25px;
+    font-size: 24px;
+    color: @thirdColor;
+    -webkit-text-stroke: 0.5px @mainColor;
+    @media(min-width: 576px){
+      margin-top: 45px;
+    }
+
+    .ourOffice {
+      text-align: center;
+    }
+
+    .map {
+      iframe {
+        margin: 20px 0 120px 0;
+        border-radius: 26px;
+        height: 200px;
+        width: 100%;
+        border: 0;
+        @media(min-width: 576px){
+          height: 300px;
+        }
+        @media(min-width: 768px){
+          height: 355px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .contactUsForm {
+      label {
+        display: block;
+        text-align: center;
+        margin-bottom: 18px;
+      }
+
+      label:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      input, textarea {
+        justify-content: center;
+        width: 100%;
+        background-color: @thirdColor;
+        border: 0;
+      }
+
+      input:not(:last-child) {
+        height: 35px;
+      }
+
+      textarea {
+        height: 100px;
+      }
+    }
+
+    button {
+      width: 100%;
+      margin: 30px 0 60px 0;
+      font-size: 36px;
+      font-weight: bold;
+      color: @mainColor;
+      background-color: @forthColor;
+      border-radius: 15px;
+      border: 0;
+      height: 35px;
+      line-height: 35px;
+      @media(min-width: 768px){
+        margin-bottom: 200px;
+      }
+    }
+  }
+}
+
