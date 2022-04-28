@@ -1,41 +1,27 @@
-<!--/
-if php file consists of php code only, close tag "?>" isn't necessary
--->
 <?php
-//case-sensitive variables
 $var = 'Hello';
 $Var = 'World';
 const myConst = "CONSTANT";
-//concatenation and print
 echo $var . " " . $Var . "!";
-
-//float number in string type
 $strNum = "1.5e4";
 $boolType = true;
 $intType = 10;
-//overloading of "+" operator and concatenation with new line
 echo "<br/>" . ($strNum + 15);
-//приведення типів
 echo "<br/>" . ($boolType + $intType);
 
 //спецзначення null, коли змінна оголошена, проте, не ініціалізована
 //$someVar;
 //echo $someVar;
 
-//взведення в степінь
 echo "<br/>" . $intType ** 2;
-//decrement and increment
 $a = 11;
 $b = $a;
 --$a;
 echo "<br/>a = $a, b = $b<br/>";
 ++$a;
 echo "a = $a, b = $b";
-
-
 $num1 = 1;
 $num2 = 2;
-
 if ($num1 < $num2) {
     echo "<br/>" . "num1 < num2";
 } elseif ($num1 > $num2) {
@@ -43,12 +29,8 @@ if ($num1 < $num2) {
 } else {
     echo "<br/>" . "num1 = num2";
 }
-
-//тернарная операция
 $num3 = $num1 === $num2 ? "strictly equal" : "not equal";
 echo "<br/>$num3";
-
-// switch construction
 echo "<br/>";
 switch ($num2) {
     case 0:
@@ -78,7 +60,6 @@ switch ($num2) {
 //    default => "jpeg",
 //};
 
-//for, while, do..while, foreach
 echo "<br/>";
 for ($i = "a"; $i < "z"; $i++) {
     echo $i;
@@ -90,26 +71,17 @@ while ($i <= 89) {
     $i++;
 }
 
-
-//2 варіанти створення масивів
-
 $array = [1, 2, 3, 4];
 $Array = array(1, 2, 3, 4);
 echo "<br/>" . ($array === $Array);
-//для наглядного виводу масиву з ключами, можна використовувати
-//print_r
 echo "<br/>";
 print_r($Array);
 
-//асоціативні масиви
 $translation = ["car" => "автомобіль", "ball" => "м'яч", "keyboard" => "клавіатура"];
 foreach ($translation as $eng => $ua) {
     echo "<br/>$eng => $ua";
 }
 
-//explode and implode (для посимвольного розбиття
-// можна використовувати str_split, де вкажеш кількість символів,
-// по скільки розбивати )
 $str = "part1 part2 part3 part4";
 $pieces = explode(" ", $str);
 echo "<br/>";
@@ -117,15 +89,13 @@ print_r($pieces);
 echo "<br/>";
 printf(implode(",", $pieces));
 
-//розіменування змінних
 $var = "hello";
 $hello = "world";
 echo "<br/>";
 printf($var . " " . $$var);
 
 /*
- * Допускаются следующие приведения типов:
-
+ *
 (int), (integer) - приведение к int
 (bool), (boolean) - приведение к bool
 (float), (double), (real) - приведение к float
@@ -145,8 +115,6 @@ var_dump($tmpBool);
 echo "<br/>";
 var_dump($tmpObj);
 
-//functions
-
 function myFunc($name = "Default name")
 {
     echo "<br />Nice name, $name!";
@@ -154,15 +122,11 @@ function myFunc($name = "Default name")
 
 myFunc();
 myFunc("Roman");
-
-//змінна кількість параметрів + анонімна функція присвоєна змінній
 $average = function (...$nums) {
     return array_sum($nums) / count($nums);
 };
 
 echo "<br/>" . $average(1, 2, 3, 4, 5);
-
-//замыкания (анонімна функція може юзати змінні із зовнішнього скопу)
 $num1 = 2;
 $num2 = 3;
 
@@ -190,8 +154,6 @@ abstract class People
         $this->name = $name;
         $this->age = $age;
     }
-    //викликається коли на об'єкт не залишиться
-    // посилань у програмі, для звільнення ресурсів
     function __destruct()
     {
         echo "<br/>People destructor call<br/>";
@@ -204,8 +166,6 @@ class Worker extends People
 
     function __construct($name = "Default name", $age = 10, $salary = 1500)
     {
-        //можемо використовувати назву батьківського класу
-        // напряму, слово parent заміняє назву класу
         if (gettype($name) == "string" && gettype($age) == "integer") {
             if ($age <= 0) {
                 throw new Exception("Вік повинен бути більше 0");
@@ -301,19 +261,12 @@ class Singletone
     protected function __construct()
     {
     }
-
-    //створює копію об'єкта
     protected function __clone()
     {
     }
-
-    //Функцию __wakeup предполагается использовать для пересоздания
-    // соединений с базами данных, которые потеряются при сериализации и десериализации
     protected function __wakeup()
     {
     }
-
-    //static дозволить без створення екземляру звернутися до методу
     public static function getInstance()
     {
         if(self::$instance===null){
