@@ -1,5 +1,9 @@
 <?php
 session_start();
+$arrOfTables = null;
+$arrOfCols = null;
+$data=null;
+include "get.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +35,25 @@ session_start();
         unset($_SESSION['message']);
     }else{
        echo "<p>Hello ". $_SESSION['user']['full_name'] . "</p>";
-
+       foreach ($arrOfTables as $table){
+           echo "<p>".$table['Tables_in_woof']."</p>";
+           echo "<table class='table'><thead><tr>";
+           foreach ($arrOfCols[$table['Tables_in_woof']] as $column){
+                   echo "<th>".$column["Field"]."</th>";
+           }
+           echo "</tr></thead>";
+           echo "<tbody>";
+           foreach ($data[$table['Tables_in_woof']] as $rows){
+                   echo "<tr>";
+                   foreach ($rows as $elem){
+                       echo "<td>".$elem."</td>";
+                   }
+                   echo "</tr>";
+           }
+           echo "</tbody></table>";
+       }
     }
     ?>
 </div>
-
-
 </body>
 </html>

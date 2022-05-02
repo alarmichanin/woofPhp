@@ -1,17 +1,38 @@
 <?php
-include_once "./connect.php";
-echo $connection;
-function selectAllGoods()
+$connection = null;
+include_once "connect.php";
+
+function getAllTablesInDB($conn)
 {
-    $conn = connect(SERVERNAME, USERNAME, PASSWORD, DBNAME, PORT);
-    $sql = 'SELECT * FROM `goods`';
+    $sql = 'SHOW TABLES FROM woof';
     $result = mysqli_query($conn, $sql);
-    var_dump($result);
-    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    print_r($rows);
-    foreach ($rows as $row) {
-        print("Name: " . $row['name'] . "<br/>");
-    }
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
-selectAllGoods();
+function getAllRowsInTables($conn,$tables)
+{
+    $arrOfCols = [];
+    foreach ($tables as $table) {
+        $sql = 'SHOW COLUMNS FROM ' . $table["Tables_in_woof"];
+        $result = mysqli_query($conn, $sql);
+        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $arrOfCols[$table["Tables_in_woof"]] = $rows;
+    }
+    return $arrOfCols;
+}
+
+function selectAllData($conn,$tables)
+{
+    $arrOfRows = [];
+    foreach ($tables as $table){
+        $sql = 'SELECT * FROM '. $table["Tables_in_woof"];
+        $result = mysqli_query($conn, $sql);
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $arrOfRows[$table["Tables_in_woof"]] = $data;
+    }
+    return $arrOfRows;
+}
+
+$arrOfTables = getAllTablesInDB($connection);
+$arrOfCols = getAllRowsInTables($connection,$arrOfTables);
+$data = selectAllData($connection,$arrOfTables);
