@@ -1,5 +1,6 @@
 <?php
 session_start();
+$connection = null;
 include_once '../connect.php';
 function login($db, $login, $password)
 {
@@ -30,8 +31,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 }
 
 if (isset($_SESSION['login']) && isset($_SESSION['password'])) {
-    $db = connect(SERVERNAME, USERNAME, PASSWORD, DBNAME, PORT);
-    if (login($db, $_SESSION['login'], $_SESSION['password'])) {//Попытка авторизации
+    if (login($connection, $_SESSION['login'], $_SESSION['password'])) {//Попытка авторизации
         header('Location: ../admin.php');
     }
 

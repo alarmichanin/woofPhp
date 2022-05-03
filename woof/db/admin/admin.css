@@ -1,9 +1,6 @@
+
 .login-from {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+    margin: 100px 75px;
 }
 .login-form input{
     margin-top: 20px;
@@ -12,7 +9,7 @@
 .table {
     width: 100%;
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .table thead th {
     font-weight: bold;
@@ -43,4 +40,32 @@
 }
 .table tbody tr td:last-child {
     border-radius: 0 8px 8px 0;
+}
+.table ~ form{
+    display: none;
+}
+.table ~ form ~ button{
+    margin-bottom: 50px;
+}
+.b-container{
+    background-color: #ccc;
+    margin:0 auto;
+    font-size:30px;
+    color: #fff;
+}
+.b-popup{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0;
+    left: 0;
+}
+.b-popup .b-popup-content{
+    margin:30vw 40vw;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0 0 10px #000;
 }

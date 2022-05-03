@@ -2,7 +2,7 @@
 session_start();
 $arrOfTables = null;
 $arrOfCols = null;
-$data=null;
+$data = null;
 include "get.php";
 ?>
 <!DOCTYPE html>
@@ -27,33 +27,47 @@ include "get.php";
                name='login' required><br>
         <input type='password' placeholder='Пароль' class='input'
                name='password' required><br>
-        <input type='submit' value='Войти' class='button'>
+        <input type='submit' value='Увійти' class='button'>
     </form>";
         if (isset($_SESSION['message'])) {
             echo '<p class="err-msg">' . $_SESSION['message'] . '</p>';
         }
         unset($_SESSION['message']);
-    }else{
-       echo "<p>Hello ". $_SESSION['user']['full_name'] . "</p>";
-       foreach ($arrOfTables as $table){
-           echo "<p>".$table['Tables_in_woof']."</p>";
-           echo "<table class='table'><thead><tr>";
-           foreach ($arrOfCols[$table['Tables_in_woof']] as $column){
-                   echo "<th>".$column["Field"]."</th>";
-           }
-           echo "</tr></thead>";
-           echo "<tbody>";
-           foreach ($data[$table['Tables_in_woof']] as $rows){
-                   echo "<tr>";
-                   foreach ($rows as $elem){
-                       echo "<td>".$elem."</td>";
-                   }
-                   echo "</tr>";
-           }
-           echo "</tbody></table>";
-       }
+    } else {
+        echo "<p>Hello, " . $_SESSION['user']['full_name'] . "</p>";
+        foreach ($arrOfTables as $table) {
+            echo "<p><b>" . strtoupper($table['Tables_in_woof']) . " table</b></p>";
+            echo "<table class='table'><thead><tr>";
+            foreach ($arrOfCols[$table['Tables_in_woof']] as $column) {
+                echo "<th>" . $column["Field"] . "</th>";
+            }
+            echo "</tr></thead>";
+            echo "<tbody>";
+            foreach ($data[$table['Tables_in_woof']] as $rows) {
+                echo "<tr>";
+                foreach ($rows as $elem) {
+                    echo "<td>" . $elem . "</td>";
+                }
+                echo "</tr>";
+            }
+            echo "</tbody></table>
+ <form action='./set.php' class=" . $table["Tables_in_woof"] . "Table method='post'>
+    <div class='b-popup popup" . $table['Tables_in_woof'] . "'>
+        <div class='b-popup-content'>
+        <input type='hidden' name=".$table['Tables_in_woof']. " value=''/>
+        ";
+            foreach ($arrOfCols[$table['Tables_in_woof']] as $column) {
+                if ($column["Field"] != "id") {
+                    echo "
+                         <input type='text' placeholder=" . $column["Field"] . " name=" . $column["Field"] . " required>";
+                }
+            }
+            echo "<input type='submit' value='Записати' class='button'></div></div></form>
+<button class=" . $table["Tables_in_woof"] . ">Додати</button>";
+        }
     }
     ?>
 </div>
+<script src="admin/admin.js"></script>
 </body>
 </html>
