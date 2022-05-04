@@ -22,7 +22,6 @@
     transform: translate(-50%,-50%);
     background-color: rgba(0, 0, 0, 0.89);
     border-radius:3px;
-    /*padding:70px 100px;*/
 }
 .input-container{
     position:relative;
@@ -151,6 +150,27 @@ button {
 
 button:hover {
     box-shadow: 20px 5px 0 black, -20px -5px 0 black;
+}
+
+.box button {
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: black;
+    border: 1px solid white;
+    box-shadow: 3px 3px 0 white,
+    -3px -3px 0 white,
+    -3px 3px 0 white,
+    3px -3px 0 white;
+    transition: 300ms ease-in-out;
+}
+
+.box button:hover {
+    box-shadow: 20px 5px 0 white, -20px -5px 0 white;
 }
 
 button:focus {
