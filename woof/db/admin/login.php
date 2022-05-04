@@ -5,13 +5,14 @@ include_once '../connect.php';
 function login($db, $login, $password)
 {
     $loginResult = mysqli_query($db, "SELECT * FROM userlist WHERE login='$login'
-                  AND password='$password' AND admin='1'");
+                  AND password='$password'");
 
     if (mysqli_num_rows($loginResult)) {
         $user = mysqli_fetch_assoc($loginResult);
         $_SESSION['user'] =[
             "id"=>$user['id'],
             "full_name"=>$user['name'],
+            "admin"=>$user["admin"]
         ];
         return true;
     } else {

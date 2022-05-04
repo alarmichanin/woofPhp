@@ -21,14 +21,25 @@ include "get.php";
     <?php
     if (!isset($_SESSION['user'])) {
         echo "
-    <div class='title'>Зайти в панель адміністратора</div>
-    <form action='./admin/login.php' method='post' id='login-form' class='login-form'>
-        <input type='text' placeholder='Логін' class='input'
+<div class='wrapper'>   
+    <div class='box'>
+	<form action='./admin/login.php' method='post' id='login-form' class='login-form'>
+		<span class='text-center'><nobr>Зайти в панель адміністратора</nobr></span>
+	<div class='input-container'>
+		<input type='text' class='input'
                name='login' required><br>
-        <input type='password' placeholder='Пароль' class='input'
+		<label>Логін</label>		
+	</div>
+	<div class='input-container'>		
+		<input type='password' class='input'
                name='password' required><br>
-        <input type='submit' value='Увійти' class='button'>
-    </form>";
+		<label>Пароль</label>
+	</div>
+		<button type='submit' form='login-form' id='login-form-btn noselect' value='Submit'>Увійти</button> 
+</form>	
+</div>
+</div>
+        ";
         if (isset($_SESSION['message'])) {
             echo '<p class="err-msg">' . $_SESSION['message'] . '</p>';
         }
@@ -54,7 +65,7 @@ include "get.php";
  <form action='./set.php' class=" . $table["Tables_in_woof"] . "Table method='post'>
     <div class='b-popup popup" . $table['Tables_in_woof'] . "'>
         <div class='b-popup-content'>
-        <input type='hidden' name=".$table['Tables_in_woof']. " value=''/>
+        <input type='hidden' name=" . $table['Tables_in_woof'] . " value=''/>
         ";
             foreach ($arrOfCols[$table['Tables_in_woof']] as $column) {
                 if ($column["Field"] != "id") {
@@ -63,7 +74,13 @@ include "get.php";
                 }
             }
             echo "<input type='submit' value='Записати' class='button'></div></div></form>
-<button class=" . $table["Tables_in_woof"] . ">Додати</button>";
+<button class=" . $table["Tables_in_woof"] . " id='btn noselect'>Додати</button>";
+            if ($table["Tables_in_woof"] == "userlist") {
+                if (isset($_SESSION['setErr'])) {
+                    echo '<p class="err-msg"><b>' . $_SESSION['setErr'] . '</b></p>';
+                }
+                unset($_SESSION['setErr']);
+            }
         }
     }
     ?>
